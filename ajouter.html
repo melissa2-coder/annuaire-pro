@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ajouter mon entreprise — AnnuairePro</title>
+  <meta name="description" content="Référencez gratuitement votre entreprise dans l'annuaire local AnnuairePro.">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <div class="topbar">
+    <div class="container topbar-inner">
+      <span>📞 Contactez nos conseillers : 0 800 123 456 (service gratuit)</span>
+      <div class="topbar-links">
+        <a href="ajouter.html" class="active">Ajouter mon entreprise</a>
+        <a href="aide.html">Aide</a>
+      </div>
+    </div>
+  </div>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo">
+        <span class="logo-icon">📗</span>
+        <span class="logo-text">Annuaire<span class="logo-accent">Pro</span></span>
+      </a>
+      <nav class="main-nav">
+        <a href="index.html">Accueil</a>
+        <a href="services.html">Tous les services</a>
+        <a href="services.html?cat=sante">Santé</a>
+        <a href="services.html?cat=maison">Maison &amp; artisans</a>
+        <a href="aide.html">Aide</a>
+      </nav>
+      <button class="nav-toggle" aria-label="Ouvrir le menu">☰</button>
+    </div>
+  </header>
+
+  <section class="page-head">
+    <div class="container">
+      <h1>Référencez votre entreprise gratuitement</h1>
+      <p>Complétez le formulaire ci-dessous. Notre équipe valide les fiches sous 48 h ouvrées.</p>
+    </div>
+  </section>
+
+  <main class="section">
+    <div class="container narrow">
+      <form class="card form-card" id="add-form" novalidate>
+        <div class="form-row">
+          <div class="form-field">
+            <label for="f-nom">Nom de l'entreprise *</label>
+            <input type="text" id="f-nom" required placeholder="Ex. Boulangerie du Marché">
+          </div>
+          <div class="form-field">
+            <label for="f-cat">Catégorie *</label>
+            <select id="f-cat" required>
+              <option value="">Choisir…</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-field">
+            <label for="f-ville">Ville *</label>
+            <input type="text" id="f-ville" required placeholder="Ex. Lyon">
+          </div>
+          <div class="form-field">
+            <label for="f-tel">Téléphone *</label>
+            <input type="tel" id="f-tel" required placeholder="06 12 34 56 78">
+          </div>
+        </div>
+
+        <div class="form-field">
+          <label for="f-desc">Description</label>
+          <textarea id="f-desc" rows="4" placeholder="Décrivez vos services, vos spécialités, vos horaires…"></textarea>
+        </div>
+
+        <div class="form-field">
+          <label for="f-site">Site web (facultatif)</label>
+          <input type="url" id="f-site" placeholder="https://">
+        </div>
+
+        <label class="checkbox">
+          <input type="checkbox" id="f-cgu" required>
+          J'accepte les conditions d'utilisation et certifie être le représentant de cette entreprise. *
+        </label>
+
+        <p class="form-error" id="form-error" hidden>Merci de compléter tous les champs obligatoires (*) et d'accepter les conditions.</p>
+        <p class="form-success" id="form-success" hidden>✅ Votre demande a bien été enregistrée. Votre fiche sera visible après validation.</p>
+
+        <button type="submit" class="btn btn-primary">Envoyer ma demande</button>
+      </form>
+
+      <div class="card perks">
+        <h3>Pourquoi nous rejoindre ?</h3>
+        <ul>
+          <li>✔ Fiche entreprise complète, gratuite et sans engagement</li>
+          <li>✔ Avis clients vérifiés pour gagner la confiance</li>
+          <li>✔ Statistiques de visites de votre fiche</li>
+          <li>✔ Mise à jour de vos horaires et services à tout moment</li>
+        </ul>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <div class="logo footer-logo"><span class="logo-icon">📗</span> Annuaire<span class="logo-accent">Pro</span></div>
+        <p>L'annuaire local et les services de proximité de votre région.</p>
+      </div>
+      <div>
+        <h4>Explorer</h4>
+        <a href="services.html?cat=maison">Maison &amp; artisans</a>
+        <a href="services.html?cat=sante">Santé</a>
+        <a href="services.html?cat=restauration">Restauration</a>
+      </div>
+      <div>
+        <h4>Entreprises</h4>
+        <a href="ajouter.html">Référencer mon entreprise</a>
+        <a href="aide.html">Centre d'aide</a>
+      </div>
+      <div>
+        <h4>Informations</h4>
+        <a href="aide.html">Conditions d'utilisation</a>
+        <a href="aide.html">Confidentialité</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">© 2025 AnnuairePro — Tous droits réservés.</div>
+    </div>
+  </footer>
+
+  <script src="js/data.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
