@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Annuaire Pro — Trouvez les professionnels et services près de chez vous</title>
+  <meta name="description" content="Annuaire local et services de proximité : commerce, artisans, santé, restaurants. Trouvez un professionnel près de chez vous en quelques secondes.">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- Barre utilitaire -->
+  <div class="topbar">
+    <div class="container topbar-inner">
+      <span>📞 Contactez nos conseillers : 0 800 123 456 (service gratuit)</span>
+      <div class="topbar-links">
+        <a href="ajouter.html">Ajouter mon entreprise</a>
+        <a href="aide.html">Aide</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- En-tête -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo">
+        <span class="logo-icon">📗</span>
+        <span class="logo-text">Annuaire<span class="logo-accent">Pro</span></span>
+      </a>
+      <nav class="main-nav">
+        <a href="index.html" class="active">Accueil</a>
+        <a href="services.html">Tous les services</a>
+        <a href="services.html?cat=sante">Santé</a>
+        <a href="services.html?cat=maison">Maison &amp; artisans</a>
+        <a href="aide.html">Aide</a>
+      </nav>
+      <a href="ajouter.html" class="btn btn-primary btn-sm">Ajouter mon entreprise</a>
+      <button class="nav-toggle" aria-label="Ouvrir le menu">☰</button>
+    </div>
+  </header>
+
+  <!-- Bloc de recherche -->
+  <section class="search-section">
+    <div class="container">
+      <h1>Trouvez un professionnel <strong>près de chez vous</strong></h1>
+      <p class="subtitle">Plus de 12 400 entreprises et services de proximité référencés</p>
+      <form class="search-form" id="home-search" action="services.html" method="get">
+        <div class="search-field">
+          <label for="q">Quoi, qui ?</label>
+          <input type="text" id="q" name="q" placeholder="Plombier, coiffeur, dentiste…" autocomplete="off">
+        </div>
+        <div class="search-sep"></div>
+        <div class="search-field">
+          <label for="ville">Où ?</label>
+          <input type="text" id="ville" name="ville" placeholder="Ville ou code postal" list="villes" autocomplete="off">
+          <datalist id="villes">
+            <option value="Paris"></option>
+            <option value="Lyon"></option>
+            <option value="Marseille"></option>
+            <option value="Bordeaux"></option>
+            <option value="Toulouse"></option>
+            <option value="Lille"></option>
+          </datalist>
+        </div>
+        <button type="submit" class="btn btn-primary btn-search">Rechercher</button>
+      </form>
+
+      <div class="quick-links">
+        <span>Populaire :</span>
+        <a href="services.html?cat=maison">Plomberie</a>
+        <a href="services.html?cat=bienetre">Coiffeurs</a>
+        <a href="services.html?cat=restauration">Restaurants</a>
+        <a href="services.html?cat=sante">Médecins</a>
+        <a href="services.html?cat=automobile">Garages</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Catégories -->
+  <section class="section categories-section">
+    <div class="container">
+      <h2>Explorez par catégorie</h2>
+      <div class="categories-grid" id="categories-grid"></div>
+    </div>
+  </section>
+
+  <!-- Sélection mise en avant -->
+  <section class="section featured-section">
+    <div class="container">
+      <div class="section-head">
+        <h2>Les mieux notés cette semaine</h2>
+        <a href="services.html" class="see-all">Voir tout &rarr;</a>
+      </div>
+      <div class="listings-grid" id="featured-listings"></div>
+    </div>
+  </section>
+
+  <!-- Comment ça marche -->
+  <section class="section how-section">
+    <div class="container">
+      <h2>Comment ça marche ?</h2>
+      <div class="steps-grid">
+        <div class="step">
+          <div class="step-num">1</div>
+          <h3>Recherchez</h3>
+          <p>Saisissez le service recherché et votre ville. Filtrez ensuite par catégorie, note ou horaires.</p>
+        </div>
+        <div class="step">
+          <div class="step-num">2</div>
+          <h3>Comparez</h3>
+          <p>Consultez les avis vérifiés, les horaires d'ouverture et les coordonnées de chaque professionnel.</p>
+        </div>
+        <div class="step">
+          <div class="step-num">3</div>
+          <h3>Contactez</h3>
+          <p>Appelez directement ou demandez un devis gratuit en ligne. C'est simple et sans engagement.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Encart pro -->
+  <section class="cta-section">
+    <div class="container cta-inner">
+      <div>
+        <h2>Vous êtes un professionnel ?</h2>
+        <p>Créez votre fiche gratuitement et soyez visible auprès de milliers de clients près de chez vous.</p>
+      </div>
+      <a href="ajouter.html" class="btn btn-light">Référencer mon entreprise</a>
+    </div>
+  </section>
+
+  <!-- Pied de page -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <div class="logo footer-logo"><span class="logo-icon">📗</span> Annuaire<span class="logo-accent">Pro</span></div>
+        <p>L'annuaire local et les services de proximité de votre région.</p>
+      </div>
+      <div>
+        <h4>Explorer</h4>
+        <a href="services.html?cat=maison">Maison &amp; artisans</a>
+        <a href="services.html?cat=sante">Santé</a>
+        <a href="services.html?cat=restauration">Restauration</a>
+        <a href="services.html?cat=automobile">Automobile</a>
+      </div>
+      <div>
+        <h4>Entreprises</h4>
+        <a href="ajouter.html">Référencer mon entreprise</a>
+        <a href="aide.html">Centre d'aide</a>
+        <a href="aide.html">Publicité &amp; visibilité</a>
+      </div>
+      <div>
+        <h4>Informations</h4>
+        <a href="aide.html">Conditions d'utilisation</a>
+        <a href="aide.html">Confidentialité</a>
+        <a href="aide.html">Nous contacter</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">© 2025 AnnuairePro — Tous droits réservés.</div>
+    </div>
+  </footer>
+
+  <script src="js/data.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

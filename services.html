@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Résultats de recherche — AnnuairePro</title>
+  <meta name="description" content="Liste des professionnels et services de proximité correspondant à votre recherche.">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <div class="topbar">
+    <div class="container topbar-inner">
+      <span>📞 Contactez nos conseillers : 0 800 123 456 (service gratuit)</span>
+      <div class="topbar-links">
+        <a href="ajouter.html">Ajouter mon entreprise</a>
+        <a href="aide.html">Aide</a>
+      </div>
+    </div>
+  </div>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo">
+        <span class="logo-icon">📗</span>
+        <span class="logo-text">Annuaire<span class="logo-accent">Pro</span></span>
+      </a>
+      <nav class="main-nav">
+        <a href="index.html">Accueil</a>
+        <a href="services.html" class="active">Tous les services</a>
+        <a href="services.html?cat=sante">Santé</a>
+        <a href="services.html?cat=maison">Maison &amp; artisans</a>
+        <a href="aide.html">Aide</a>
+      </nav>
+      <a href="ajouter.html" class="btn btn-primary btn-sm">Ajouter mon entreprise</a>
+      <button class="nav-toggle" aria-label="Ouvrir le menu">☰</button>
+    </div>
+  </header>
+
+  <section class="results-head">
+    <div class="container">
+      <form class="search-form compact" id="results-search" method="get">
+        <div class="search-field">
+          <label for="q">Quoi, qui ?</label>
+          <input type="text" id="q" name="q" placeholder="Plombier, coiffeur, dentiste…">
+        </div>
+        <div class="search-sep"></div>
+        <div class="search-field">
+          <label for="ville">Où ?</label>
+          <input type="text" id="ville" name="ville" placeholder="Ville ou code postal" list="villes">
+          <datalist id="villes">
+            <option value="Paris"></option>
+            <option value="Lyon"></option>
+            <option value="Marseille"></option>
+            <option value="Bordeaux"></option>
+            <option value="Toulouse"></option>
+            <option value="Lille"></option>
+          </datalist>
+        </div>
+        <button type="submit" class="btn btn-primary btn-search">Rechercher</button>
+      </form>
+    </div>
+  </section>
+
+  <main class="section results-section">
+    <div class="container results-layout">
+
+      <aside class="filters">
+        <h3>Filtres</h3>
+
+        <div class="filter-group">
+          <h4>Catégorie</h4>
+          <div id="filter-cats"></div>
+        </div>
+
+        <div class="filter-group">
+          <h4>Note minimum</h4>
+          <div id="filter-ratings"></div>
+        </div>
+
+        <div class="filter-group">
+          <h4>Ouvert maintenant</h4>
+          <label class="checkbox"><input type="checkbox" id="filter-open"> Uniquement les entreprises ouvertes</label>
+        </div>
+
+        <button class="btn btn-ghost btn-block" id="reset-filters">Réinitialiser les filtres</button>
+      </aside>
+
+      <div class="results-main">
+        <div class="results-count">
+          <h1 id="results-title">Tous les services</h1>
+          <p id="results-meta">—</p>
+          <div class="sort">
+            <label for="sort">Trier par :</label>
+            <select id="sort">
+              <option value="rating">Meilleures notes</option>
+              <option value="reviews">Nombre d'avis</option>
+              <option value="name">Nom (A → Z)</option>
+            </select>
+          </div>
+        </div>
+        <div class="listings-vertical" id="listings"></div>
+        <p class="no-results" id="no-results" hidden>Aucun résultat ne correspond à votre recherche. Essayez d'élargir vos filtres.</p>
+      </div>
+
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <div class="logo footer-logo"><span class="logo-icon">📗</span> Annuaire<span class="logo-accent">Pro</span></div>
+        <p>L'annuaire local et les services de proximité de votre région.</p>
+      </div>
+      <div>
+        <h4>Explorer</h4>
+        <a href="services.html?cat=maison">Maison &amp; artisans</a>
+        <a href="services.html?cat=sante">Santé</a>
+        <a href="services.html?cat=restauration">Restauration</a>
+        <a href="services.html?cat=automobile">Automobile</a>
+      </div>
+      <div>
+        <h4>Entreprises</h4>
+        <a href="ajouter.html">Référencer mon entreprise</a>
+        <a href="aide.html">Centre d'aide</a>
+      </div>
+      <div>
+        <h4>Informations</h4>
+        <a href="aide.html">Conditions d'utilisation</a>
+        <a href="aide.html">Confidentialité</a>
+        <a href="aide.html">Nous contacter</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">© 2025 AnnuairePro — Tous droits réservés.</div>
+    </div>
+  </footer>
+
+  <script src="js/data.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
