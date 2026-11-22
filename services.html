@@ -47,15 +47,7 @@
         <div class="search-sep"></div>
         <div class="search-field">
           <label for="ville">Où ?</label>
-          <input type="text" id="ville" name="ville" placeholder="Ville ou code postal" list="villes">
-          <datalist id="villes">
-            <option value="Paris"></option>
-            <option value="Lyon"></option>
-            <option value="Marseille"></option>
-            <option value="Bordeaux"></option>
-            <option value="Toulouse"></option>
-            <option value="Lille"></option>
-          </datalist>
+          <input type="text" id="ville" name="ville" placeholder="Ville ou code postal" data-villes autocomplete="off">
         </div>
         <button type="submit" class="btn btn-primary btn-search">Rechercher</button>
       </form>
@@ -138,5 +130,6 @@
 
   <script src="js/data.js"></script>
   <script src="js/app.js"></script>
+  <script src="js/villes.js"></script>
 </body>
 </html>

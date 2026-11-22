@@ -487,3 +487,48 @@ h1, h2, h3, h4 { font-weight: 700; line-height: 1.25; }
   .form-row { grid-template-columns: 1fr; }
   .footer-grid { grid-template-columns: 1fr; gap: 20px; }
 }
+
+/* ================= ============
+   AnnuairePro — autocomplétion des villes
+================================ */
+
+.ville-wrapper { position: relative; }
+
+.ville-dropdown {
+  position: absolute;
+  top: calc(100% + 4px);
+  left: 0;
+  right: 0;
+  z-index: 60;
+  max-height: 300px;
+  overflow-y: auto;
+  background: var(--bg);
+  border: 1px solid var(--blue);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-lg);
+  list-style: none;
+}
+
+.ville-dropdown[hidden] { display: none; }
+
+.ville-dropdown li {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 12px;
+  padding: 9px 14px;
+  cursor: pointer;
+  border-bottom: 1px solid var(--border);
+}
+
+.ville-dropdown li:last-child { border-bottom: 0; }
+.ville-dropdown li:hover,
+.ville-dropdown li.actif { background: var(--blue-light); }
+.ville-dropdown mark { background: none; color: var(--blue-dark); font-weight: 700; }
+.ville-dropdown li.ville-vide { color: var(--text-light); cursor: default; }
+
+.ville-meta {
+  color: var(--text-light);
+  font-size: 0.85rem;
+  white-space: nowrap;
+}
