@@ -83,18 +83,29 @@
   }
 
   function attacher(input) {
-    const parent = input.parentElement;
-    parent.classList.add("ville-wrapper");
-
     const liste = document.createElement("ul");
     liste.className = "ville-dropdown";
     liste.id = "ville-dropdown-" + Math.random().toString(36).slice(2, 8);
     liste.setAttribute("role", "listbox");
     liste.hidden = true;
-    parent.appendChild(liste);
+    document.body.appendChild(liste);
+
+    const positionner = () => {
+      const rect = input.getBoundingClientRect();
+      liste.style.left = Math.round(rect.left + window.scrollX) + "px";
+      liste.style.top = Math.round(rect.bottom + window.scrollY + 4) + "px";
+      liste.style.minWidth = Math.round(rect.width) + "px";
+    };
+
+    const onDeplacement = () => {
+      if (!liste.hidden) positionner();
+    };
+    window.addEventListener("scroll", onDeplacement, true);
+    window.addEventListener("resize", onDeplacement);
 
     let suggestions = [];
     let indexActif = -1;
+    let selectionEnCours = false;
 
     const fermer = () => {
       liste.hidden = true;
@@ -102,10 +113,18 @@
       input.setAttribute("aria-expanded", "false");
     };
 
+    const ouvrir = () => {
+      positionner();
+      liste.hidden = false;
+      input.setAttribute("aria-expanded", "true");
+    };
+
     const choisir = commune => {
+      selectionEnCours = true;
       input.value = commune.nom;
       fermer();
       input.dispatchEvent(new Event("input", { bubbles: true }));
+      selectionEnCours = false;
       input.focus();
     };
 
@@ -117,6 +136,7 @@
         fermer();
         return;
       }
+    positionner();
       if (!suggestions.length) {
         const vide = document.createElement("li");
         vide.className = "ville-vide";
@@ -136,15 +156,17 @@
           liste.appendChild(li);
         });
       }
-      liste.hidden = false;
-      input.setAttribute("aria-expanded", "true");
+      ouvrir();
     };
 
     input.setAttribute("role", "combobox");
     input.setAttribute("aria-expanded", "false");
     input.setAttribute("aria-controls", liste.id);
 
-    input.addEventListener("input", () => afficher(input.value));
+    input.addEventListener("input", () => {
+      if (selectionEnCours) return;
+      afficher(input.value);
+    });
 
     input.addEventListener("keydown", e => {
       if (liste.hidden) return;

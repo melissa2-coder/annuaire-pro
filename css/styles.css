@@ -490,16 +490,12 @@ h1, h2, h3, h4 { font-weight: 700; line-height: 1.25; }
 
 /* ================= ============
    AnnuairePro — autocomplétion des villes
+   (le menu est attaché à <body> et positionné en JS, au-dessus du formulaire)
 ================================ */
-
-.ville-wrapper { position: relative; }
 
 .ville-dropdown {
   position: absolute;
-  top: calc(100% + 4px);
-  left: 0;
-  right: 0;
-  z-index: 60;
+  z-index: 500;
   max-height: 300px;
   overflow-y: auto;
   background: var(--bg);
