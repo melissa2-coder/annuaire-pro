@@ -36,5 +36,6 @@ annuaire-local/
 ├── css/styles.css    Styles (palette bleu / jaune, responsive)
 └── js/
     ├── data.js       Catégories et entreprises d'exemple
-    └── app.js        Rendu, recherche, filtres, tri, formulaire
+    ├── app.js        Rendu, recherche, filtres, tri, formulaire
+    └── villes.js     Autocomplétion des communes françaises (geo.api.gouv.fr, repli hors-ligne intégré)
 ```
